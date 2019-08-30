@@ -65,7 +65,7 @@ const DateTime = ({
   return <Tag>{formattedDate}</Tag>
 }
 
-Date.propTypes = {
+DateTime.propTypes = {
   /** Date to format, could be a string , if it's empty will take the current date */
   children: PropTypes.node,
   /** A string with a BCP 47 language tag, or an array of such strings. e.g. "en-US". If you don't provide any locale via Context Provider or props, the locally will be guessed from the browser */
