@@ -1,0 +1,91 @@
+---
+name: Recipes
+route: /recipes
+---
+
+# Recipes
+
+## Recommended usage with a React Context Provider
+
+The recommended way to use it would be with a [React Context](https://reactjs.org/docs/context.html), this will allow you to have a global configuration so you don't need to pass props every time you format a date.
+
+A provider `IntlProvider` is exposed with a default config, but you can you set your own config and use it in your `App` component.
+
+```js
+// In your App.js or similar wrapping the rest of elements
+import { IntlProvider } from "react-intl-datetime-format";
+
+const intlConfig = {
+  locale: "en-US",
+  options: {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    timeZoneName: "short"
+  }
+};
+
+const App = () => (
+  <IntlProvider config={intlConfig}>
+    <HelloWorld />
+  </IntlProvider>
+);
+
+// In any other file
+import { Date } from "react-intl-datetime-format";
+
+// Other formats are accepted instead of a Date instance, for example just "02 dec 1983"
+const date = new Date(2012, 11, 20, 3, 0, 0)
+
+const HelloWorld = () => (
+  // renders "December 20, 2012, 4:00:00 AM GMT+1" (based on the IntlProvider config)
+  <Date>{date}</Date>
+);
+```
+
+The configuration object that `IntlProvider` expects is basically matching [the arguments from Intl.DateTimeFormat constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters).
+
+## Change the Context Provider configuration programatically
+
+You can update the Provider configuration easily in case you need it:
+
+```js
+// In your App.js or similar...
+import { IntlProvider } from "react-intl-datetime-format"
+
+const intlConfig = {
+  locale: "en-US",
+  options: {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    timeZoneName: "short"
+  }
+};
+
+const App = () => <IntlProvider config={intlConfig}>...</IntlProvider>
+
+// In any other part of your code
+import { useIntl } from "react-intl-datetime-format"
+
+const UpdateFormatConfig = () => (
+  const { setConfig } = useIntl()
+
+  const newConfig = {
+    locale: "de-DE",
+    options: {
+      timeZoneName: "long"
+    },
+  }
+
+  return (
+    <button onClick={() => setConfig(newConfig)}>Update format config</button>
+  )
+)
+```

@@ -1,0 +1,44 @@
+---
+name: DateTime Component
+route: /datetime
+---
+
+import { Playground, Props, Link } from "docz"
+import { DateTime } from "."
+
+# DateTime
+
+This React component let you format any date or time based on these criteria:
+
+- Using props
+- Using a Context Provider
+- Guessing the default browser locale
+
+## Props
+
+Props are matching `Intl.DateTimeFormat` parameters. So [if you need a detailed explanation for any prop please visit their documentation site](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters).
+
+<Props of={DateTime} />
+
+## Usage
+
+<Playground style={{ display: "flex", justifyContent: "space-around" }}>
+  <DateTime>03 dec 1983</DateTime>
+  <DateTime
+    locale="es-ES"
+    years="numeric"
+    month="short"
+    day="numeric"
+    hour="numeric"
+    minute="numeric"
+  >
+    {new Date(Date.UTC(2012, 11, 20, 3, 0, 0))}
+  </DateTime>
+  <DateTime as="span" month="long" weekday="short" day="numeric" />
+</Playground>
+
+> The default value for each date-time component property is undefined, but if all component properties are undefined, then year, month, and day are assumed to be "numeric".
+
+The recommended way to use this component is within a React Context Provider to set a global config.
+
+<Link to="/recipes">Check the Recipes section to see an example</Link>.
