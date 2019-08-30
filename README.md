@@ -32,10 +32,13 @@ npm i react-intl-datetime-format
 This is the easiest way to use `Date` formatter component:
 
 ```js
-import { Date } from "react-intl-datetime-format";
+import { DateTime } from "react-intl-datetime-format"
 
 // renders 12/3/1983
-const Foo = () => <Date locale="de-DE">{new Date("03 dec 1983")}</Date>;
+const Foo = () => <DateTime locale="de-DE">03 dec 1983</DateTime>
+
+// renders the current formatted date guessing the locale from the browser
+const Bar = () => <DateTime />
 ```
 
 You don't even need to pass a `locale` prop, by default it will try guess the locale from the browser.
@@ -48,7 +51,7 @@ A provider `IntlProvider` is exposed with a default config, but you can you set 
 
 ```js
 // In your App.js or similar...
-import { IntlProvider } from "react-intl-datetime-format";
+import { IntlProvider } from "react-intl-datetime-format"
 
 const intlConfig = {
   locale: "en-US",
@@ -59,21 +62,21 @@ const intlConfig = {
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
-    timeZoneName: "short"
-  }
-};
+    timeZoneName: "short",
+  },
+}
 
-const App = () => <IntlProvider config={intlConfig}>...</IntlProvider>;
+const App = () => <IntlProvider config={intlConfig}>...</IntlProvider>
 
 // In any other part of your code
-import { DateTime } from "react-intl-datetime-format";
+import { DateTime } from "react-intl-datetime-format"
 
 const date = new Date(2012, 11, 20, 3, 0, 0)
 
 const HelloWorld = () => (
   // renders "December 20, 2012, 4:00:00 AM GMT+1" (based on the provider config)
   <DateTime>{date}</DateTime>
-);
+)
 ```
 
 The configuration object that `IntlProvider` expects is basically matching [the arguments from Intl.DateTimeFormat constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat#Parameters).
