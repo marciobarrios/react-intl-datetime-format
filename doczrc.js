@@ -1,4 +1,4 @@
 export default {
   codeSandbox: false,
-  menu: ["Introduction", "Recipes"],
+  menu: ["Introduction", "Recipes", "Components"],
 }

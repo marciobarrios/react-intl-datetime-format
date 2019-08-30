@@ -2,7 +2,7 @@
 
 Tiny React component wrapping the ECMAScript Internationalization API with sane defaults to format dates and times.
 
-To see in detail the component `Date` with the list of props and examples please [check the documentation site]().
+To see in detail the component `Date` with the list of props and examples please [check the documentation site](https://react-intl-datetime-format.netlify.com).
 
 You can also play with `react-intl-datetime-format` in a [CodeSandbox]().
 
@@ -66,13 +66,13 @@ const intlConfig = {
 const App = () => <IntlProvider config={intlConfig}>...</IntlProvider>;
 
 // In any other part of your code
-import { Date } from "react-intl-datetime-format";
+import { DateTime } from "react-intl-datetime-format";
 
 const date = new Date(2012, 11, 20, 3, 0, 0)
 
 const HelloWorld = () => (
   // renders "December 20, 2012, 4:00:00 AM GMT+1" (based on the provider config)
-  <Date>{date}</Date>
+  <DateTime>{date}</DateTime>
 );
 ```
 

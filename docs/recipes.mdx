@@ -35,14 +35,14 @@ const App = () => (
 );
 
 // In any other file
-import { Date } from "react-intl-datetime-format";
+import { DateTime } from "react-intl-datetime-format";
 
 // Other formats are accepted instead of a Date instance, for example just "02 dec 1983"
 const date = new Date(2012, 11, 20, 3, 0, 0)
 
 const HelloWorld = () => (
   // renders "December 20, 2012, 4:00:00 AM GMT+1" (based on the IntlProvider config)
-  <Date>{date}</Date>
+  <DateTime>{date}</DateTime>
 );
 ```
 
