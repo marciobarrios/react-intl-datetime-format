@@ -58,16 +58,19 @@ const DateTime = ({
   }
 
   const date = children ? new Date(children) : new Date()
-  const formattedDate = new Intl.DateTimeFormat(setLocale, setOptions).format(
-    date
-  )
 
-  return <Tag>{formattedDate}</Tag>
+  let formattedDate = ""
+
+  try {
+    formattedDate = new Intl.DateTimeFormat(setLocale, setOptions).format(date)
+  } catch (e) {}
+
+  return formattedDate ? <Tag>{formattedDate}</Tag> : null
 }
 
 DateTime.propTypes = {
   /** Date to format, could be a string , if it's empty will take the current date */
-  children: PropTypes.node,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
   /** A string with a BCP 47 language tag, or an array of such strings. e.g. "en-US". If you don't provide any locale via Context Provider or props, the locally will be guessed from the browser */
   locale: PropTypes.string,
   /** Date formatting style */
