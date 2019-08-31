@@ -4,11 +4,10 @@ Tiny React component wrapping the ECMAScript Internationalization API with sane 
 
 To see in detail the component `Date` with the list of props and examples please [check the documentation site](https://react-intl-datetime-format.netlify.com).
 
-You can also play with `react-intl-datetime-format` in a [CodeSandbox]().
-
 ## Features
 
 - Effortless format dates and times for different locales
+- Possibility to use strings, Unix timestamp or Date instances to format a date
 - Relies in the standard [Intl.DateTimeFormat constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat)
 - Possibility to use it as an standalone React Component using props to configure it
 - Possibility to use a general config using a React Context Provider

@@ -1,4 +1,7 @@
 export default {
-  codeSandbox: false,
   menu: ["Introduction", "Recipes", "Components"],
+  codeSandbox: false,
+  themeConfig: {
+    showPlaygroundEditor: true,
+  },
 }
