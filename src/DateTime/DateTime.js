@@ -71,7 +71,7 @@ const DateTime = ({
 DateTime.propTypes = {
   /** Date to format, could be a string , if it's empty will take the current date */
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
-  /** A string with a BCP 47 language tag, or an array of such strings. e.g. "en-US". If you don't provide any locale via Context Provider or props, the locally will be guessed from the browser */
+  /** A string with a BCP 47 language tag, or an array of such strings. e.g. "en-US". If you don't provide any locale via React Context or props, the locally will be guessed from the browser */
   locale: PropTypes.string,
   /** Date formatting style */
   dateStyle: PropTypes.oneOf(["full", "clongode", "medium", "short"]),

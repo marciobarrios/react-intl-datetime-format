@@ -1,5 +1,5 @@
 import React from "react"
-import { DateTime } from "./Datetime"
+import { DateTime } from "."
 import { render } from "@testing-library/react"
 import { IntlProvider } from "../IntlProvider"
 
