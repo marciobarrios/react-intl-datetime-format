@@ -95,7 +95,6 @@ describe("DateTime with a config Provider", () => {
       dateStyle: "medium",
       timeStyle: "medium",
       localeMatcher: "best fit",
-      timeZone: "America/New_York",
       hour12: true,
       hourCycle: "h12",
       formatMatcher: "best fit",
@@ -117,7 +116,7 @@ describe("DateTime with a config Provider", () => {
     )
 
     expect(container.textContent).toBe(
-      "Wed, December 19, 2012 AD, 9:00:00 PM EST"
+      "Thu, December 20, 2012 AD, 3:00:00 AM GMT+1"
     )
   })
 })
