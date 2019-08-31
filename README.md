@@ -1,5 +1,10 @@
 # react-intl-datetime-format
 
+[![npm version](https://img.shields.io/npm/v/react-intl-datetime-format.svg)](https://www.npmjs.com/package/react-intl-datetime-format)
+[![Build Status](https://travis-ci.com/marciobarrios/react-intl-datetime-format.svg?branch=master)](https://travis-ci.com/marciobarrios/react-intl-datetime-format)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/marciobarrios/react-intl-datetime-format/master.svg?style=flat-square)](https://codecov.io/gh/marciobarrios/react-intl-datetime-format/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 Tiny React component wrapping the ECMAScript Internationalization API with sane defaults to format dates and times.
 
 To see in detail the component `Date` with the list of props and examples please [check the documentation site](https://react-intl-datetime-format.netlify.com).
