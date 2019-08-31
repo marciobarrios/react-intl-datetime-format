@@ -11,8 +11,9 @@ import { DateTime } from "./DateTime"
 
 This React component let you format any date or time based on these criteria:
 
-- Using props
-- Using a Context Provider
+- Using strings, Unix timestamp or Date instances as a source
+- Using props to control the formatting
+- Using a Context Provider to have a general formatting configuration
 - Guessing the default browser locale
 
 ## Props
@@ -33,7 +34,7 @@ Props are matching `Intl.DateTimeFormat` parameters. So [if you need a detailed 
     hour="numeric"
     minute="numeric"
   >
-    {new Date(Date.UTC(2012, 11, 20, 3, 0, 0))}
+    {new Date(2012, 11, 20, 3, 0, 0)}
   </DateTime>
   <DateTime as="span" month="long" weekday="short" day="numeric" />
 </Playground>

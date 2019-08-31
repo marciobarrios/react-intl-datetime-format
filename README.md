@@ -7,7 +7,9 @@
 
 Tiny React component wrapping the ECMAScript Internationalization API with sane defaults to format dates and times.
 
-To see in detail the component `Date` with the list of props and examples please [check the documentation site](https://react-intl-datetime-format.netlify.com).
+To see in detail the component `DateTime` with the list of props and examples please [check the documentation site](https://react-intl-datetime-format.netlify.com).
+
+You can also play with `react-intl-datetime-format` in a [CodeSandbox](https://codesandbox.io/s/react-intl-datetime-format-rmo1i).
 
 ## Features
 
@@ -39,7 +41,7 @@ This is the easiest way to use `Date` formatter component:
 import { DateTime } from "react-intl-datetime-format"
 
 // renders 12/3/1983
-const Foo = () => <DateTime locale="de-DE">03 dec 1983</DateTime>
+const Foo = () => <DateTime locale="en-US">03 dec 1983</DateTime>
 
 // renders the current formatted date guessing the locale from the browser
 const Bar = () => <DateTime />
