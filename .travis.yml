@@ -7,6 +7,9 @@ node_js:
 script:
   - npm test
 
+after_success:
+  - npx codecov
+
 jobs:
   include:
     - stage: release
