@@ -92,12 +92,22 @@ describe("DateTime with a config Provider", () => {
 
   test("formats a date overwritting context with props", () => {
     const props = {
-      month: "long",
+      dateStyle: "medium",
+      timeStyle: "medium",
+      localeMatcher: "best fit",
+      timeZone: "America/New_York",
+      hour12: true,
+      hourCycle: "h12",
+      formatMatcher: "best fit",
       weekday: "short",
+      era: "short",
+      year: "numeric",
+      month: "long",
       day: "numeric",
-      second: "numeric",
       hour: "numeric",
       minute: "numeric",
+      second: "numeric",
+      timeZoneName: "short",
     }
 
     const { container } = render(
@@ -106,6 +116,8 @@ describe("DateTime with a config Provider", () => {
       </IntlProvider>
     )
 
-    expect(container.textContent).toBe("Thu, December 20, 3:00:00 AM")
+    expect(container.textContent).toBe(
+      "Wed, December 19, 2012 AD, 9:00:00 PM EST"
+    )
   })
 })
