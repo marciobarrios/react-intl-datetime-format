@@ -106,7 +106,6 @@ describe("DateTime with a config Provider", () => {
       hour: "numeric",
       minute: "numeric",
       second: "numeric",
-      timeZoneName: "short",
     }
 
     const { container } = render(
@@ -115,8 +114,6 @@ describe("DateTime with a config Provider", () => {
       </IntlProvider>
     )
 
-    expect(container.textContent).toBe(
-      "Thu, December 20, 2012 AD, 3:00:00 AM GMT+1"
-    )
+    expect(container.textContent).toBe("Thu, December 20, 2012 AD, 3:00:00 AM")
   })
 })
