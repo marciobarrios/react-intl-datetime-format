@@ -92,7 +92,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "semantic-release": "^15.13.24"
+    "semantic-release": "^17.2.3"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
